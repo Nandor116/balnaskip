@@ -1,0 +1,9 @@
+dist/
+node_modules/
+__pycache__/
+*.pyc
+*.xpi
+*.zip
+.DS_Store
+Thumbs.db
+.vscode/

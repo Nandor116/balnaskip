@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BálnaSkip</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <header class="brand">
+        <img class="brand-icon" src="../icons/icon-48.png" alt="" width="44" height="44" />
+        <div class="brand-copy">
+          <h1>BálnaSkip</h1>
+          <p>Súlytalan reklámskip</p>
+        </div>
+        <span class="badge" title="A skip hossza">5,5 mp</span>
+      </header>
+
+      <section class="status-card" id="statusCard" data-tone="neutral" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <div class="status-copy">
+          <div class="status-label" id="statusLabel">Kapcsolódás…</div>
+          <div class="status-detail" id="statusDetail">Állapot ellenőrzése</div>
+        </div>
+      </section>
+
+      <button class="undo-button" id="undoButton" type="button" hidden>
+        <span aria-hidden="true">↩</span>
+        Vissza a reklámhoz
+      </button>
+
+      <label class="toggle-row" for="enabledToggle">
+        <span class="toggle-copy">
+          <span class="toggle-title">Automatikus ugrás</span>
+          <span class="toggle-desc">A trigger után 5,5 másodperccel</span>
+        </span>
+        <span class="switch">
+          <input id="enabledToggle" type="checkbox" role="switch" />
+          <span class="track" aria-hidden="true"></span>
+        </span>
+      </label>
+
+      <footer class="footer">
+        Csak a Súlytalan csatornán · 5,5 mp-es ugrás
+      </footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
