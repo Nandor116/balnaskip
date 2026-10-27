@@ -1,5 +1,11 @@
 # Változások
 
+## 1.1.1
+
+- `browser_specific_settings.gecko.data_collection_permissions` hozzáadva
+  (`required: ["none"]`), így az AMO elfogadja a feltöltést.
+- Funkcionális változás nincs.
+
 ## 1.1.0
 
 - A skip hossza **5 mp → 5,5 mp**.

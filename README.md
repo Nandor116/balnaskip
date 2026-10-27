@@ -107,7 +107,19 @@ nincs verziókövetve; a kiadott XPI a Releases oldalon érhető el.
 A kiegészítő nem küld adatot külső szerverre, nem használ analitikát, és nem tárol
 személyes adatot. A beállítás (`enabled`) a böngésző helyi tárhelyén marad.
 
+A manifestben ez explicit módon is szerepel:
+
+```json
+"data_collection_permissions": {
+  "required": ["none"]
+}
+```
+
+Ez a Firefox beépített adatgyűjtési hozzájárulási rendszerének jelzése: a kiegészítő
+nem gyűjt és nem továbbít adatot.
+
 ## Verzió
 
+- **1.1.1** – AMO-kompatibilis manifest: `data_collection_permissions` mező hozzáadva.
 - **1.1.0** – a skip hossza 5 mp-ről 5,5 mp-re nőtt; a popup és a toast szövege frissült.
 - **1.0.0** – első kiadás.
