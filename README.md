@@ -20,26 +20,28 @@ A kiegészítő csak a `https://www.youtube.com/@sulytalanbalna` csatorna videó
 ## Telepítés
 
 1. Töltsd le a legfrissebb `.xpi` fájlt a repository **Releases** oldaláról.
-2. Ha a böngésző kéri, engedélyezd az aláíratlan kiegészítőket:
-   - `about:config`
-   - keresd meg: `xpinstall.signatures.required`
-   - állítsd `false`-ra.
-3. Nyisd meg az `about:addons` oldalt.
-4. Kattints a fogaskerék ikonra → **Install Add-on From File…** (Kiegészítő telepítése fájlból).
-5. Válaszd ki a letöltött `.xpi` fájlt.
+2. Nyisd meg az `about:addons` oldalt.
+3. Kattints a fogaskerék ikonra → **Install Add-on From File…** (Kiegészítő telepítése fájlból).
+4. Válaszd ki a letöltött `.xpi` fájlt.
 
 ### Kitűzés a toolbarra
 
 - Jobb klikk a BálnaSkip ikonjára → **Pin to Toolbar** / **Rögzítés az eszköztárhoz**.
 - Vagy: jobb klikk a toolbarra → **Customize Toolbar…**, és húzd az ikont a kívánt helyre.
 
-### Fontos az aláíratlan XPI-ről
+### Aláírás
 
-A kiadott XPI jelenleg **nincs Mozilla által aláírva**. Waterfox, Firefox Developer Edition
-és Nightly alatt az `xpinstall.signatures.required = false` beállítás általában elég.
-Firefox Release alatt a Mozilla aláírás hiányában a rendszeres telepítés tiltott lehet;
-ilyenkor az `about:debugging#/runtime/this-firefox` oldalon lehet ideiglenesen betölteni,
-vagy a kiegészítőt előbb aláírásra kell küldeni az addons.mozilla.org felületén.
+A kiadott XPI **Mozilla által aláírt** (AMO, self-distribution), így a sima Firefox
+Release-ben is telepíthető, és nem kell az `xpinstall.signatures.required` beállítással
+bajlódni.
+
+Az aláírt fájl a `META-INF/` aláírást is tartalmazza, ezért **utólag nem szabad
+módosítani** – minden változtatás érvényteleníti az aláírást. Új verzióhoz új
+feltöltés és új aláírás kell.
+
+Ha saját, aláíratlan fejlesztői buildet töltesz be, ahhoz továbbra is kell a
+`xpinstall.signatures.required = false` beállítás (Waterfox, Firefox Developer Edition,
+Nightly), vagy az `about:debugging#/runtime/this-firefox` oldali ideiglenes betöltés.
 
 ## Használat
 

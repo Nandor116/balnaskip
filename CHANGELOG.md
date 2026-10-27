@@ -4,6 +4,7 @@
 
 - `browser_specific_settings.gecko.data_collection_permissions` hozzáadva
   (`required: ["none"]`), így az AMO elfogadja a feltöltést.
+- A kiadott XPI mostantól **Mozilla által aláírt** (AMO self-distribution).
 - Funkcionális változás nincs.
 
 ## 1.1.0
