@@ -4,6 +4,7 @@
 
 - A skip hossza **5 mp → 5,5 mp**.
 - A popup badgeszám, a leírások és a toast szövege az új értéket mutatja.
+- Az ikon a Súlytalan csatorna profilképe lett, skip jelöléssel.
 - Magyar nyelvű telepítési és használati dokumentáció.
 
 ## 1.0.0

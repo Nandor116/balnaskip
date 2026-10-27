@@ -78,11 +78,16 @@ scriptben marad, így a popup bezárása nem szakítja meg a működést.
 
 ## Kompatibilitás
 
-- Waterfox 153.5.0 alatt tesztelve.
+- Waterfox 153.5.0 és 153.6.0 alatt tesztelve.
 - Firefox 157.0.1 alatt tesztelve.
 - uBlock Origin és SponsorBlock mellett is működik. A SponsorBlock ugyanazt a
   szegmenst a saját adatbázisából szintén átugorhatja; a két kiegészítő nem ütközik,
   legfeljebb a SponsorBlock még tovább teker a szegmens végére.
+
+## Ikon
+
+Az ikon a **Súlytalan** csatorna profilképe, a skip jelet tartalmazó jelöléssel.
+A profilképre vonatkozó jogok a csatornát illetik.
 
 ## Fejlesztés
 
