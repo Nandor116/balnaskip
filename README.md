@@ -93,16 +93,50 @@ A profilképre vonatkozó jogok a csatornát illetik.
 
 ## Fejlesztés
 
+### Build-beállítások (env fájl)
+
+A build nem tartalmaz beégetett helyi útvonalat. A saját géped útvonalait egy
+helyi env fájlban add meg:
+
+```powershell
+# Windows
+copy balnaskip.env.example balnaskip.env
+
+# macOS / Linux
+cp balnaskip.env.example balnaskip.env
+```
+
+Ezután szerkeszd a `balnaskip.env` fájlt:
+
+| Változó | Jelentés |
+| --- | --- |
+| `BALNASKIP_EXTENSION_DIR` | a `manifest.json`-t tartalmazó mappa útvonala |
+| `BALNASKIP_DIST_DIR` | a kész `.xpi` célmappája |
+
+- A `balnaskip.env` **nincs verziókövetve** (szerepel a `.gitignore`-ban); csak a
+  `balnaskip.env.example` sablon kerül fel a repóba.
+- A relatív útvonalak a repository gyökeréhez képest értendők.
+- A folyamatkörnyezetben beállított `BALNASKIP_EXTENSION_DIR` /
+  `BALNASKIP_DIST_DIR` változók felülírják a fájlban lévő értékeket (CI-hez).
+- Ha a fájl hiányzik, a build a repón belüli `extension/` és `dist/` mappát
+  használja, így friss clone-nal is működik.
+
+### Build
+
 ```powershell
 # Egységtesztek
 node tests/core.test.js
 
 # XPI újraépítése (a manifest verziószámából nevezi el a fájlt)
 python tools/build_xpi.py
+
+# Másik env fájllal
+python tools/build_xpi.py --env masik.env
 ```
 
-A forrás a `extension/` mappában van, a kész csomag a `dist/` mappába kerül. A `dist/`
-nincs verziókövetve; a kiadott XPI a Releases oldalon érhető el.
+A kész csomag neve `balnaskip-<verzió>.xpi` (a `short_name`-ből képzett ASCII
+slug + a manifest verziószáma). A `dist/` nincs verziókövetve; a kiadott XPI a
+Releases oldalon érhető el.
 
 ## Adatvédelem
 

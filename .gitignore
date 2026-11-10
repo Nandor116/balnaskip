@@ -1,4 +1,6 @@
 dist/
+# Local build configuration (copy the matching .env.example file)
+balnaskip.env
 node_modules/
 __pycache__/
 *.pyc
